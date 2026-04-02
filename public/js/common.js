@@ -1,0 +1,7 @@
+const doc = document.querySelector('.js-test-btn');
+
+if (doc) {
+  doc.addEventListener('click', function () {
+    doc.textContent = 'Clicked!';
+  });
+}

@@ -1,2 +1,26 @@
-<h1>Hello world</h1>
-<p>Twig is working.</p>
+<link rel="stylesheet" href="/css/style.css">
+
+<h1 class="test__ttl">Hello
+	{{ test_name }}さん</h1>
+<p class="test__txt">Twig is working.</p>
+<div class="test__inner">
+	<h2 class="test__ttl">Products</h2>
+	<ul class="test__list">
+		{% for product in products %}
+			<li>
+				<div class="test__img">
+					<img src="{{ product.image }}" alt="{{ product.name }}">
+				</div>
+				<p>{{ product.name }}
+					-
+					{{ product.price }}円</p>
+			</li>
+		{% endfor %}
+	</ul>
+	<h2 class="test__ttl">Button</h2>
+	<div class="test__btnWrap">
+		<button class="test__btn js-test-btn">Click me</button>
+	</div>
+
+</div>
+<script src="/js/common.js"></script>
