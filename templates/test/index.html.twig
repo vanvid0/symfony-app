@@ -1,10 +1,13 @@
-<link rel="stylesheet" href="/css/style.css">
 
-<h1 class="test__ttl">Hello
-	{{ test_name }}さん</h1>
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h2 class="test__ttl">Hello
+	{{ test_name }}さん</h2>
 <p class="test__txt">Twig is working.</p>
 <div class="test__inner">
-	<h2 class="test__ttl">Products</h2>
+	<h3 class="test__ttl">Products</h3>
 	<ul class="test__list">
 		{% for product in products %}
 			<li>
@@ -14,13 +17,16 @@
 				<p>{{ product.name }}
 					-
 					{{ product.price }}円</p>
+          {% if product.price < 2000 %}
+            <p>お買い得商品です！</p>
+          {% endif %}
 			</li>
 		{% endfor %}
 	</ul>
-	<h2 class="test__ttl">Button</h2>
+	<h3 class="test__ttl">Button</h3>
 	<div class="test__btnWrap">
 		<button class="test__btn js-test-btn">Click me</button>
 	</div>
 
 </div>
-<script src="/js/common.js"></script>
+{% endblock %}
